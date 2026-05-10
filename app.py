@@ -19,6 +19,18 @@ full_bath = st.slider("Full Bathrooms", 0, 5, 1)
 
 lot_area_log = np.log(lot_area) if lot_area > 0 else 0
 
+features = [
+    "OverallQual",
+    "GrLivArea",
+    "TotalBsmtSF",
+    "Age",
+    "LotArea_log",
+    "GarageArea",
+    "GarageCars",
+    "TotRmsAbvGrd",
+    "FullBath"
+]
+
 input_data = pd.DataFrame([{
     "OverallQual": overall_qual,
     "GrLivArea": gr_liv_area,
@@ -30,6 +42,8 @@ input_data = pd.DataFrame([{
     "TotRmsAbvGrd": tot_rooms,
     "FullBath": full_bath
 }])
+
+input_data = input_data[features]
 
 if st.button("Predict Price"):
     prediction = model.predict(input_data)[0]
