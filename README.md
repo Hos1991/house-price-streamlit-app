@@ -96,7 +96,7 @@ This project demonstrates how machine learning can help:
 
 ## ▶️ How to Run
 ### 1. Clone the repository
-  git clone <repo-link>
+  git clone https://github.com/Hos1991/house-price-streamlit-app
 
 ### 2. Install dependencies
   pip install -r requirements.txt
