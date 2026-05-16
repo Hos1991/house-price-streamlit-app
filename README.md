@@ -1,110 +1,121 @@
-# 🏠 House Price Prediction with XGBoost
+# 📉 Customer Churn Prediction Dashboard
 
 ## 📌 Project Overview
-This project predicts house prices using machine learning techniques and the XGBoost algorithm.
+This project predicts customer churn using machine learning and an interactive Streamlit dashboard.
 
-The goal was to improve prediction accuracy through feature engineering, model comparison, and boosting methods.
+The application allows users to input customer information and receive:
+- Churn prediction
+- Churn probability score
+
+The goal is to help businesses identify customers at risk of leaving.
 
 ---
 
 ## 📊 Dataset
-- Source: Ames Housing Dataset
-- Problem Type: Regression
-- Target Variable: `SalePrice`
+- Dataset: Telco Customer Churn Dataset
+- Problem Type: Classification
+- Target Variable: Churn
 
 ---
 
 ## 🔍 Project Workflow
 - Data cleaning
-- Exploratory Data Analysis (EDA)
-- Feature engineering
-- Log transformation
+- Handling missing values
+- Encoding categorical variables
 - Train/Test split
-- Random Forest baseline model
-- XGBoost implementation
-- Feature importance analysis
-- Streamlit deployment
+- XGBoost classification model
+- Probability prediction
+- Streamlit dashboard deployment
 
 ---
 
 ## ⚙️ Features Used
-```text
-OverallQual
-GrLivArea
-TotalBsmtSF
-Age
-LotArea_log
-GarageArea
-GarageCars
-TotRmsAbvGrd
-FullBath
-```
----
-
-## 🤖 Models Used
-### Random Forest Regressor
-MAE: 18724
-
-### XGBoost Regressor
-MAE: 18150
-
-XGBoost achieved better performance and produced more realistic feature importance patterns.
+- Tenure
+- Monthly Charges
+- Total Charges
+- Contract Type
+- Internet Service
+- Payment Method
 
 ---
 
-## 📈 Feature Importance Insights
+## 🤖 Model Used
+XGBoost Classifier
+
+---
+
+## 📈 Model Performance
+
+Classification Report:
+
+Precision, recall, and F1-score showed strong performance for customer retention prediction.
+
 Key observations:
-
-- OverallQual remained the most important feature.
-- GarageCars and FullBath became significantly more important in XGBoost.
-- XGBoost captured more realistic relationships between house quality and pricing.
-
-This suggests that boosting models can detect more subtle feature interactions compared to Random Forest.
+- Customers with month-to-month contracts showed higher churn probability.
+- Long-term contracts reduced churn significantly.
+- Fiber optic customers tended to churn more frequently.
 
 ---
 
-## 🚀 Streamlit Web App
-Live App:
+## 🚀 Live Streamlit App
 
-https://house-price-app-app-82fv4yt2hyg7wiudzwkotx.streamlit.app/
+Live Demo:
+https://customer-churn-app-app-dntfsokutfywmrc58is2ju.streamlit.app/
 
-The app allows users to enter house features and receive predicted house prices in real time.
+The dashboard allows users to:
+- Enter customer information
+- Predict churn status
+- View churn probability
+
+Example outputs:
+- "Customer is likely to churn"
+- "Customer is likely to stay"
 
 ---
 
 ## 🧠 Business Value
-This project demonstrates how machine learning can help:
-
-- Estimate property prices
-- Support real estate decision-making
-- Analyze key pricing factors
-- Build deployable prediction systems
+This application can help businesses:
+- Identify high-risk customers
+- Improve retention strategies
+- Reduce customer loss
+- Support marketing decision-making
 
 ---
 
 ## 🛠️ Technologies Used
 - Python
 - Pandas
-- NumPy
 - Scikit-learn
 - XGBoost
 - Streamlit
-- Matplotlib
-- Seaborn
+- Joblib
 
 ---
 
 ## ▶️ How to Run
+
 ### 1. Clone the repository
-  git clone https://github.com/Hos1991/house-price-streamlit-app
+git clone https://github.com/Hos1991/house-price-streamlit-app/
 
 ### 2. Install dependencies
-  pip install -r requirements.txt
+pip install -r requirements.txt
 
 ### 3. Run Streamlit app
-  streamlit run app.py
+streamlit run app.py
 
-  ---
-  
+---
+
+## 📂 Project Structure
+
+customer-churn-streamlit-app/
+│
+├── app.py
+├── churn_model.pkl
+├── model_columns.pkl
+├── requirements.txt
+└── README.md
+
+---
+
 ## 👨‍💻 Author
 Hossein Fathi
